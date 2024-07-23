@@ -33,7 +33,7 @@ class RESTService {
       if (header != null) {
         headers.addAll(header);
       }
-    }
+    } 
 
     if (header != null) {
       headers.addAll(header);

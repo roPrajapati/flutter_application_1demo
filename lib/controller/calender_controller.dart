@@ -49,6 +49,7 @@ class CalenderController extends GetxController {
         var falovor = result['flavors'];
 
         modelData = (falovor as List).map((e) => Flavor.fromJson(e)).toList();
+        
        
       }
        isLoading.value = false;

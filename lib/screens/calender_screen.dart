@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_application_1demo/controller/calender_controller.dart';
+import 'package:flutter_application_1demo/screens/poke_screen.dart';
 import 'package:flutter_application_1demo/utils/extensions.dart';
 import 'package:get/get.dart';
 
@@ -14,7 +15,16 @@ class CalenderScreen extends StatelessWidget {
         backgroundColor: Colors.blue,
         title: const Text("Calender"),
         leading: const Icon(Icons.menu),
-        actions: [const Icon(Icons.notifications)],
+        actions: [InkWell( 
+          onTap: () {
+            
+            Get.to(() => PokeScreen());
+          },
+          child: Padding(
+            padding: const EdgeInsets.all(8.0),
+            child: const Icon(Icons.notifications),
+          ),
+        )],
       ),
       body: GetBuilder<CalenderController>(
         init: CalenderController(),

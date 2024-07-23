@@ -26,4 +26,23 @@ class PokemoServices {
       return left("some thing wrong");
     }
   }
+  Future<Either<String, List<Flavor>>> getListPagination({required int limit,required int offset}) async {
+    try {
+      final response = await RESTService.performAPIRequest(
+        httpUrl: "https://pokeapi.co/api/v2/ability/?limit=$limit&offset=$offset",
+        apiType: APIType.GET,
+      );
+
+      final result = jsonDecode(response.body);
+
+      var falovor = result['results'];
+      var modelData = (falovor as List).map((e) => Flavor.fromJson(e)).toList();
+      print("modelData==>>> ${modelData.length}");
+      return right(modelData);
+    } catch (ex) {
+      print("error: $ex");
+      return left("some thing wrong");
+      
+    }
+  }
 }

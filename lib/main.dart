@@ -2,10 +2,11 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_application_1demo/screens/calender_screen.dart';
 import 'package:flutter_application_1demo/utils/extensions.dart';
+import 'package:get/get_navigation/src/root/get_material_app.dart';
 
 void main() {
   runApp(
-    const MaterialApp(
+    const GetMaterialApp(
       home: CalenderScreen(),
     ),
   );
